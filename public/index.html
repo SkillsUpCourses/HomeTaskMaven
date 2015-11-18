@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>MSGAdmin</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    		<script src="hello.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="Hello">
+			<input ng-model="sid"> :SID<br>
+                        <input ng-model="busId"> :busId <button ng-click="update()" ng-enter="update()">check</button> <br>
+                        <input ng-model="deparLogin"> :deparLogin<br>
+                        <input ng-model="respPerson"> :respPerson<br>
+                        <input ng-model="email"> :email<br>
+                        <input ng-model="descr"> :descr<br>
+                        <button ng-click="update()" ng-enter="update()">send</button> 
+			<p>The ID is {{greeting.sid}}</p> 
+			<p>The content is {{greeting.sid}} , {{greeting.busId}} , {{greeting.deparLogin}} , {{greeting.respPerson}} </p>
+		        <p>Answer:{{createbusid}} </p> 
+                </div>
+	</body>
+</html>
