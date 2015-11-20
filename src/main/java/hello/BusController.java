@@ -27,6 +27,7 @@ public class BusController {
         }
         String answer = insertBusId(sid, busId, deparLogin, respPerson, email, descr);
         return new BusEntity(sid, busId, deparLogin, respPerson, email, descr, answer);
+        
     }
    
     

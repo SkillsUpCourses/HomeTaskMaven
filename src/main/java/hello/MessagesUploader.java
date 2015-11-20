@@ -27,10 +27,9 @@ public class MessagesUploader {
 //        run();
 //    }
 
-    private static void insertMessages()   {
+     static void insertMessages()   {
             String line;
             String msgCode = "";
-            int iterate = 0;
             StringBuilder query = new StringBuilder();
             StringBuilder sbSub = new StringBuilder();
             Map<String,String> msgMap = new HashMap<>();
@@ -73,8 +72,7 @@ public class MessagesUploader {
                 query.append("   Title='").append(Utils.correctValue(values[8])).append("'/>");
 //            query.append("FullText='").append(Utils.correctValue(values[7])).append("'/>");
                 msgMap.put(msgCode, query.toString());
-                
-                
+                             
                 }else {
                     query.append("<LocalMsg ");
                     query.append("   Level='").append(Utils.correctValue(values[5])).append("' ");
@@ -84,7 +82,6 @@ public class MessagesUploader {
                 
                     for(Map.Entry<String, String> entry : msgMap.entrySet()){
 
-
                         if(entry.getKey().equals(msgCode)){
 
                                 sbSub.append(entry.getValue()).append(query);                
@@ -92,19 +89,9 @@ public class MessagesUploader {
                                 sbSub.setLength(0);
 
                         }
-                        
-                        
-                        
-                        
-                        
-
                     }
-                
                 }
-
-            
                     query.setLength(0);
-
             }
 
         } catch (IOException ex) {
@@ -122,10 +109,11 @@ public class MessagesUploader {
         public static Map<String, String> parseMsgToMap (Map<String,String> map){
     
             StringBuilder sb = new StringBuilder();
-                for(Map.Entry<String, String> entry : map.entrySet()){              
-                sb.append(entry.getValue()).append("</s>").append("</r>").append("</doc>");                
-                entry.setValue(sb.toString());                           
-                sb.setLength(0);
+                for(Map.Entry<String, String> entry : map.entrySet()){   
+                    
+                    sb.append(entry.getValue()).append("</s>").append("</r>").append("</doc>");                
+                    entry.setValue(sb.toString());                           
+                    sb.setLength(0);
                 
                 }
         return map;
