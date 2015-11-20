@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author Dima
  */
-public class NewPour_advanced {
+public class MessagesInserting {
 
 //    public static void main(String[] args)  {
 //        try {
@@ -27,7 +27,7 @@ public class NewPour_advanced {
 //        run();
 //    }
 
-    private static void run()   {
+    private static void insertMessages()   {
             String line;
             String msgCode = "";
             int iterate = 0;
