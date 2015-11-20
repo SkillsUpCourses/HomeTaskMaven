@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author Dima
  */
-public class MessagesInserting {
+public class MessagesUploader {
 
 //    public static void main(String[] args)  {
 //        try {
