@@ -1,6 +1,6 @@
 package hello;
 
-public class Greeting {
+public class BusEntity {
 
     //private final long id;
     //private final String content;
@@ -10,14 +10,22 @@ public class Greeting {
     private  String respPerson;
     private  String email;
     private  String descr;
-
+    private  String answer;
 //        public Greeting(String sid, String content, String busId) {
 //        this.sid = sid;
 //        this.content = content;
 //         this.busId = busId;
 //    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
         
-    public Greeting(String sid, String busId, String deparLogin, String respPerson, String email,  String descr) {
+    public BusEntity(String sid, String busId, String deparLogin, String respPerson, String email,  String descr, String answer) {
        // this.id = id;
         //this.content = content;
         this.sid = sid;
@@ -26,6 +34,7 @@ public class Greeting {
         this.respPerson = respPerson;
         this.email = email;
         this.descr = descr;
+        this.answer = answer;
         
     }
 

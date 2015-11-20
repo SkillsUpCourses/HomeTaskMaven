@@ -1,5 +1,6 @@
 package hello;
 
+import static hello.AddNewBusId.insertBusId;
 import java.security.GeneralSecurityException;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GreetingController {
+public class BusController {
 
 //    private static final String template = "Hello, %s, %s!";
 //    private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="sid", defaultValue="null") String sid, 
+    @RequestMapping("/createbus")
+    public BusEntity createbus(@RequestParam(value="sid", defaultValue="null") String sid, 
                              @RequestParam(value="busId", defaultValue="null") String busId,
                              @RequestParam(value="deparLogin", defaultValue="null") String deparLogin,
                              @RequestParam(value="respPerson", defaultValue="null") String respPerson,
@@ -24,23 +25,11 @@ public class GreetingController {
         } catch (GeneralSecurityException ex) {
            ex.printStackTrace(); //Logger.getLogger(AddNewBusId.class.getName()).log(Level.SEVERE, null, ex);
         }
-        GreetingController gc = new GreetingController();
-        gc.createBusID(sid, busId, deparLogin, respPerson, email, descr);
-        return new Greeting(sid, busId, deparLogin, respPerson, email, descr);
+        String answer = insertBusId(sid, busId, deparLogin, respPerson, email, descr);
+        return new BusEntity(sid, busId, deparLogin, respPerson, email, descr, answer);
     }
    
-      @RequestMapping("/checkbusid")  
-  public String checkBusID(@RequestParam(value="busId") String busId){
-  
-    return "BusId"+busId+"not found";
-  }  
     
     
-  @RequestMapping("/createbusid")  
-  public String createBusID(String sid, String busId, String deparLogin,String respPerson, String email, String descr){
-          AddNewBusId add = new AddNewBusId();
-          return add.insertBusId(sid, busId, deparLogin,respPerson, email, descr);
-
-  }  
     
 }

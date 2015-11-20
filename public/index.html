@@ -7,7 +7,7 @@
 	</head>
 
 	<body>
-		<div ng-controller="Hello">
+		<div  ng-controller="Hello" >
 			<input ng-model="sid"> :SID<br>
                         <input ng-model="busId"> :busId <button ng-click="update()" ng-enter="update()">check</button> <br>
                         <input ng-model="deparLogin"> :deparLogin<br>
@@ -15,9 +15,10 @@
                         <input ng-model="email"> :email<br>
                         <input ng-model="descr"> :descr<br>
                         <button ng-click="update()" ng-enter="update()">send</button> 
-			<p>The ID is {{greeting.sid}}</p> 
-			<p>The content is {{greeting.sid}} , {{greeting.busId}} , {{greeting.deparLogin}} , {{greeting.respPerson}} </p>
-		        <p>Answer:{{createbusid}} </p> 
+			<p>The ID is {{createbus.sid}}</p> 
+			<p>The content is {{createbus.sid}} , {{createbus.busId}} , {{createbus.deparLogin}} , {{createbus.respPerson}} </p>
+		        <p>Answer:{{createbus.answer}} </p> 
+
                 </div>
 	</body>
 </html>
