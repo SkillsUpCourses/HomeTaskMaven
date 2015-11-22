@@ -5,6 +5,8 @@
  */
 package com.stoxa.api;
 
+ import org.apache.log4j.Logger;
+
 /**
  *
  * @author stoxa
