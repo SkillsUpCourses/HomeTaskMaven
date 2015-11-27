@@ -8,7 +8,7 @@
     <modules>
         <module>API</module>
     <module>web_service</module>
-  </modules>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
